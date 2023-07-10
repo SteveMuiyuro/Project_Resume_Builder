@@ -6,4 +6,4 @@ This project demonstrates the application of the different react hooks including
 - useRef
 - useEffect
 
-View Project => [ResumeBuilder]("https://projectresumebuilder.netlify.app/")
+View Project => [Resume Builder](https://projectresumebuilder.netlify.app/)
