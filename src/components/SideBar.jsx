@@ -53,15 +53,10 @@ export default function SideBar(props) {
           summ={props.summ}
         />
         <WorkExperience
-          // companyValue={props.companyValue}
           companyHolder={props.companyHolder}
-          // roleValue={props.roleValue}
           roleHolder={props.roleHolder}
-          // roleFromValue={props.roleFromValue}
           roleFromHolder={props.roleFromHolder}
-          // roleToValue={props.roleToValue}
           roleToHolder={props.roleToHolder}
-          // roleDutiesValue={props.roleDutiesValue}
           roleDutiesHolder={props.roleDutiesHolder}
           onChange2={props.onChange2}
           experience={props.experience}

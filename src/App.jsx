@@ -81,7 +81,6 @@ export default function App() {
     justifyContent: close && "center",
     alignItems: close && "center",
     maxWidth: close && "40em",
-
     margin: "0 auto",
   };
 
@@ -92,7 +91,6 @@ export default function App() {
   return (
     <>
       <h2 className="heading" style={style2}>
-        {" "}
         Project Resume Builder
       </h2>
       <div className="app-container" style={styles}>
@@ -103,15 +101,10 @@ export default function App() {
           setEducation={setEducation}
           educationValue={educationValue}
           summaryHolder="summary"
-          // companyValue={experience.company}
           companyHolder="company"
-          // roleValue={experience.role}
           roleHolder="role"
-          // roleFromValue={experience.roleFrom}
           roleFromHolder="roleFrom"
-          // roleToValue={experience.roleTo}
           roleToHolder="roleTo"
-          // roleDutiesValue={experience.roleDuties}
           roleDutiesHolder="roleDuties"
           experience={experience}
           setExperience={setExperience}
@@ -149,11 +142,6 @@ export default function App() {
           linkedIn={PersonalData.linkedIn}
           setClose={setClose}
           close={close}
-          // company={experience.company}
-          // role={experience.role}
-          // roleFrom={experience.roleFrom}
-          // roleTo={experience.roleTo}
-          // roleDuties={experience.roleDuties}
           skill={skill}
           hobby={hobby}
           award={award}
