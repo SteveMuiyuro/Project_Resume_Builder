@@ -6,6 +6,8 @@ import WorkExperience from "./WorkExperience";
 import Education from "./Education";
 import Awards from "./Awards";
 import Summary from "./Summary";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function SideBar(props) {
   let styles = {
@@ -16,9 +18,13 @@ export default function SideBar(props) {
   }
   return (
     <div className="sidebar" style={styles}>
-      <button className="close-btn" onClick={handleClose}>
-        x
-      </button>
+      <FontAwesomeIcon
+        icon={faXmark}
+        className="close-btn"
+        onClick={handleClose}
+        style={{ color: "#2577b6" }}
+      />
+
       <div className="sidebar-one">
         <PersonalDetails
           PersonalData={props.PersonalData}

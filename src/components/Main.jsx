@@ -1,6 +1,8 @@
 import React from "react";
 import MainSectionOne from "./MainSectionOne";
 import MainSectionTwo from "./MainSectionTwo";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 
 export default function Main(props) {
   function handleEdit() {
@@ -9,12 +11,17 @@ export default function Main(props) {
 
   const styles = {
     display: !props.close && "none",
+    color: props.close && "#135d96",
   };
   return (
     <div className="main">
-      <button className="edit-btn" style={styles} onClick={handleEdit}>
-        Edit
-      </button>
+      <FontAwesomeIcon
+        icon={faPen}
+        style={styles}
+        className="edit-btn"
+        onClick={handleEdit}
+      />
+
       <MainSectionOne
         fullname={props.fullname}
         title={props.title}
