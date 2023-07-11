@@ -1,21 +1,43 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import ResumePersonals from "./ResumePersonals";
 import ResumeSkills from "./ResumeSkills";
 import ResumeHobbies from "./ResumeHobbies";
 import ResumeAwards from "./ResumeAwards";
+import { nanoid } from "nanoid";
 
 export default function MainSectionOne(props) {
   const skillsAquired =
     props.skill.length > 0 &&
-    props.skill.map((skl) => <li key={skl}>{skl}</li>);
+    props.skill.map((skl) => (
+      <ResumeSkills
+        key={skl.id}
+        id={skl.id}
+        setSkill={props.setSkill}
+        name={skl.name}
+      />
+    ));
 
   const hobbiesAquired =
     props.hobby.length > 0 &&
-    props.hobby.map((hby) => <li key={hby}>{hby}</li>);
+    props.hobby.map((hby) => (
+      <ResumeHobbies
+        key={hby.id}
+        id={hby.id}
+        setHobby={props.setHobby}
+        name={hby.name}
+      />
+    ));
 
   const awardsAquired =
     props.award.length > 0 &&
-    props.award.map((awd) => <li key={awd}>{awd}</li>);
+    props.award.map((awd) => (
+      <ResumeAwards
+        key={awd.id}
+        id={awd.id}
+        setAward={props.setAward}
+        name={awd.name}
+      />
+    ));
 
   return (
     <div className="mainsection-one">
@@ -27,11 +49,14 @@ export default function MainSectionOne(props) {
         linkedIn={props.linkedIn}
         close={props.close}
       />
-      <ResumeSkills skillsAquired={skillsAquired} />
+      <h4>Skills</h4>
+      {skillsAquired}
       <hr className="style-one" />
-      <ResumeHobbies hobbiesAquired={hobbiesAquired} />
+      <h4>Hobbies</h4>
+      {hobbiesAquired}
       <hr className="style-one" />
-      <ResumeAwards awardsAquired={awardsAquired} />
+      <h4>Awards</h4>
+      {awardsAquired}
       <hr className="style-one" />
     </div>
   );

@@ -1,10 +1,21 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function ResumeAwards(props) {
+  function deleteAward(id) {
+    props.setAward((prev) => prev.filter((awd) => awd.id !== id));
+  }
   return (
     <div className="resume-awards">
-      <h4>Awards</h4>
-      <ul>{props.awardsAquired}</ul>
+      <ul>
+        <li>{props.name}</li>
+      </ul>
+      <FontAwesomeIcon
+        icon={faTrash}
+        className="skill-icon"
+        onClick={() => deleteAward(props.id)}
+      />
     </div>
   );
 }

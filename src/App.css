@@ -222,10 +222,13 @@ a {
   align-items: center;
 }
 
-.resume-skills {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
+.resume-skills,
+.hobbies-skills,
+.resume-awards {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-gap: 0.5em;
+  align-items: center;
 }
 
 ul {
@@ -250,12 +253,6 @@ h3 {
 span {
   display: inline;
 }
-
-/* hr {
-  background-color: #075985;
-  border: none;
-  height: 1px;
-} */
 
 .style-one {
   border: none;
@@ -332,4 +329,11 @@ span {
   margin-bottom: -0.5em;
   margin-top: 1em;
   text-decoration: solid;
+}
+
+.skill-icon {
+  cursor: pointer;
+}
+
+.skill-list {
 }

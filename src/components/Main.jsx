@@ -22,6 +22,9 @@ export default function Main(props) {
         email={props.email}
         linkedIn={props.linkedIn}
         skill={props.skill}
+        setSkill={props.setSkill}
+        setHobby={props.setHobby}
+        setAward={props.setAward}
         hobby={props.hobby}
         award={props.award}
         close={props.close}

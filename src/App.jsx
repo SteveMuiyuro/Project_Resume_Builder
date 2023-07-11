@@ -22,13 +22,13 @@ export default function App() {
   const [experience, setExperience] = useState([]);
 
   const [skill, setSkill] = useState([]);
-  const [skillValue, setSkillValue] = useState("");
+  const [skillValue, setSkillValue] = useState({});
 
   const [hobby, setHobby] = useState([]);
-  const [hobbyValue, setHobbyValue] = useState("");
+  const [hobbyValue, setHobbyValue] = useState({});
 
   const [award, setAward] = useState([]);
-  const [awardValue, setAwardValue] = useState("");
+  const [awardValue, setAwardValue] = useState({});
 
   const [resValue, setResValue] = useState("");
 
@@ -53,17 +53,17 @@ export default function App() {
   }
   function handleAddSkill(e) {
     const { value } = e.target;
-    setSkillValue(value);
+    setSkillValue({ name: value, id: nanoid() });
   }
 
   function handleAddHobby(e) {
     const { value } = e.target;
-    setHobbyValue(value);
+    setHobbyValue({ name: value, id: nanoid() });
   }
 
   function handleAddAward(e) {
     const { value } = e.target;
-    setAwardValue(value);
+    setAwardValue({ name: value, id: nanoid() });
   }
 
   function handleAddRes(e) {
@@ -143,6 +143,9 @@ export default function App() {
           setClose={setClose}
           close={close}
           skill={skill}
+          setSkill={setSkill}
+          setHobby={setHobby}
+          setAward={setAward}
           hobby={hobby}
           award={award}
           experience={experience}

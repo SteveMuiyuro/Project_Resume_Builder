@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-
+import { nanoid } from "nanoid";
 export default function Skills(props) {
   const skillsInputField = useRef();
 
