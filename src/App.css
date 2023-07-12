@@ -42,7 +42,7 @@ body {
   border-radius: 10px;
   border: none;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 17em 42em;
   padding: 1.5rem;
   position: relative;
 }
@@ -76,10 +76,9 @@ body {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   color: #f8fafc;
   font-size: 0.9rem;
-  min-width: 16em;
+  max-width: 100%;
 }
 
 .mainsection-two {
@@ -335,5 +334,24 @@ span {
   cursor: pointer;
 }
 
-.skill-list {
+.exp-content,
+.edu-content {
+  display: grid;
+  grid-template-columns: 15fr 1fr;
+  place-content: center;
+}
+
+.summary-content {
+  display: grid;
+  grid-template-columns: 16fr 1fr;
+  gap: 1.5em;
+}
+
+.delete-exp,
+.delete-edu {
+  cursor: pointer;
+}
+
+.profile-summary {
+  max-width: 100%;
 }

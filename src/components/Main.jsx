@@ -47,6 +47,10 @@ export default function Main(props) {
         responsibility={props.responsibility}
         summ={props.summ}
         education={props.education}
+        setExperience={props.setExperience}
+        setEducation={props.setEducation}
+        setSumm={props.setSumm}
+        close={props.close}
       />
     </div>
   );

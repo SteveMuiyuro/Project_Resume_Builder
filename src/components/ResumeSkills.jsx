@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function ResumeSkills(props) {
+  const styles = {
+    display: props.close && "none",
+  };
   function deleteSkill(id) {
     props.setSkill((prev) => prev.filter((skl) => skl.id !== id));
   }
@@ -16,6 +19,7 @@ export default function ResumeSkills(props) {
         icon={faTrash}
         className="skill-icon"
         onClick={() => deleteSkill(props.id)}
+        style={styles}
       />
     </div>
   );

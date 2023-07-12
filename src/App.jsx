@@ -49,6 +49,7 @@ export default function App() {
     setEducationValue((prev) => ({
       ...prev,
       [name]: value,
+      id: nanoid(),
     }));
   }
   function handleAddSkill(e) {
@@ -151,6 +152,9 @@ export default function App() {
           experience={experience}
           summ={summ}
           education={education}
+          setExperience={setExperience}
+          setEducation={setEducation}
+          setSumm={setSumm}
         />
       </div>
     </>

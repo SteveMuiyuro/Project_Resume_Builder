@@ -14,6 +14,7 @@ export default function MainSectionOne(props) {
         id={skl.id}
         setSkill={props.setSkill}
         name={skl.name}
+        close={props.close}
       />
     ));
 
@@ -25,6 +26,7 @@ export default function MainSectionOne(props) {
         id={hby.id}
         setHobby={props.setHobby}
         name={hby.name}
+        close={props.close}
       />
     ));
 
@@ -36,6 +38,7 @@ export default function MainSectionOne(props) {
         id={awd.id}
         setAward={props.setAward}
         name={awd.name}
+        close={props.close}
       />
     ));
 
