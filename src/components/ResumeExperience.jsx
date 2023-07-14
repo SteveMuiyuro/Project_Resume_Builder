@@ -11,6 +11,7 @@ export default function ResumeExperience(props) {
     display: props.close && "none",
   };
 
+  //Delete a specific role entry
   function deleteRole(id) {
     props.setExperience((prev) =>
       prev.filter((experience) => experience.id !== id)
@@ -31,7 +32,9 @@ export default function ResumeExperience(props) {
           <span style={styles}>{props.exp.from}</span>
           <span> </span>
           <span style={styles}>To: </span>
-          <span style={styles}>{props.exp.to}</span>
+          <span style={styles}>
+            {props.exp.worksHere ? "Date" : props.exp.to}
+          </span>
           <h4 style={styles}>Responsibilities:</h4>
           <p className="roleInfo">{props.exp.roles}</p>
         </div>

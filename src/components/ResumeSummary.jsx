@@ -7,6 +7,7 @@ export default function ResumeSummary(props) {
     display: props.close ? "none" : !props.summ ? "none" : "",
   };
 
+  //Delete displaye summary
   function deleteSummary() {
     props.setSumm("");
   }
@@ -22,8 +23,7 @@ export default function ResumeSummary(props) {
           style={styles}
         />
       </div>
-
-      <hr />
+      {!props.linkedInLink ? <hr /> : props.summ && <hr />}
     </div>
   );
 }

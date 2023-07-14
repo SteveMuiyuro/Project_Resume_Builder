@@ -1,25 +1,38 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 export default function WorkExperience(props) {
+  const [currentPost, setCurrentPost] = useState();
+
   const resInputField = useRef();
   const compInputField = useRef();
   const roleInputField = useRef();
   const roleFromField = useRef();
   const roleToField = useRef();
 
+  //Push additional experience into an array
   function addExperience() {
     props.setExperience((prev) => prev.concat(props.expValue));
     clearInfo();
-    console.log(props.experience);
   }
 
+  //Clear the form data after submission
   function clearInfo() {
     compInputField.current.value = "";
     roleInputField.current.value = "";
     roleFromField.current.value = "";
     roleToField.current.value = "";
     resInputField.current.value = "";
+    setCurrentPost((prev) => !prev);
   }
+
+  //Save the boolean value of the checkbox in state
+  function handleClick(e) {
+    setCurrentPost(e.target.checked);
+  }
+
+  const styles = {
+    display: currentPost ? "none" : "",
+  };
 
   return (
     <div className="work-experience-info">
@@ -34,6 +47,7 @@ export default function WorkExperience(props) {
         name="company"
         ref={compInputField}
       />
+
       <label htmlFor="job_role">Job Role:</label>
       <input
         type="text"
@@ -45,6 +59,20 @@ export default function WorkExperience(props) {
         ref={roleInputField}
       />
 
+      <div className="checkbox-content">
+        <label htmlFor="currentPost" className="current-post-label">
+          Do you Work Here?
+        </label>
+        <input
+          type="checkbox"
+          name="worksHere"
+          id="currentPost"
+          className="checkbx"
+          onChange={props.onChange2}
+          onClick={handleClick}
+        />
+      </div>
+
       <label htmlFor="fromDate">From:</label>
       <input
         type="date"
@@ -55,7 +83,9 @@ export default function WorkExperience(props) {
         name="from"
         ref={roleFromField}
       />
-      <label htmlFor="date">To:</label>
+      <label htmlFor="date" style={styles}>
+        To:
+      </label>
       <input
         type="date"
         id="toDate"
@@ -64,6 +94,7 @@ export default function WorkExperience(props) {
         onChange={props.onChange2}
         name="to"
         ref={roleToField}
+        style={styles}
       />
       <div className="responsibilities-info" id="responsibilities-info">
         <label htmlFor="responsibilities">Responsibilties:</label>

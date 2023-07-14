@@ -11,6 +11,7 @@ export default function MainSectionTwo(props) {
       exp={exp}
       setExperience={props.setExperience}
       close={props.close}
+      className="exp-container"
     />
   ));
 
@@ -33,13 +34,16 @@ export default function MainSectionTwo(props) {
         summ={props.summ}
         setSumm={props.setSumm}
         close={props.close}
+        linkedInLink={props.linkedInLink}
       />
+
       <h3>Work Experience</h3>
       {experinceElements}
-      <hr />
+      {!props.linkedInLink && <hr />}
+
       <h3>Education</h3>
       {educationElements}
-      <hr />
+      {!props.linkedInLink && <hr />}
     </div>
   );
 }

@@ -6,6 +6,7 @@ export default function ResumeHobbies(props) {
   const styles ={
     display: props.close && "none"
   }
+  // Delete Hobby
   function deleteHobby(id) {
     props.setHobby((prev) => prev.filter((hby) => hby.id !== id));
   }

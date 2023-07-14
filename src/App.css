@@ -45,6 +45,7 @@ body {
   grid-template-columns: 1fr 2fr;
   padding: 1.5rem;
   position: relative;
+  min-width: 65rem;
 }
 
 .close-btn {
@@ -335,24 +336,41 @@ span {
 }
 
 .exp-content,
-.edu-content {
+.edu-content,
+.summary-content,
+.personal-content-display {
   display: grid;
   grid-template-columns: 15fr 1fr;
   place-content: center;
 }
 
 .summary-content {
-  display: grid;
-  grid-template-columns: 15fr 1fr;
   gap: 1.5em;
+}
+.personal-content-display {
+  gap: 0.5em;
 }
 
 .delete-exp,
 .delete-edu {
   cursor: pointer;
 }
+/*
+.profile-summary, */
+.roleInfo {
+  text-align: start;
+}
 
-.profile-summary,
-.resume-work {
-  max-width: 100%;
+.checkbx {
+  align-self: flex-start;
+}
+
+.current-post-label {
+  font-style: italic;
+  font-size: small;
+  font-weight: 600;
+}
+
+.checkbox-content {
+  align-self: flex-start;
 }

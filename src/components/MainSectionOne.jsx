@@ -3,7 +3,6 @@ import ResumePersonals from "./ResumePersonals";
 import ResumeSkills from "./ResumeSkills";
 import ResumeHobbies from "./ResumeHobbies";
 import ResumeAwards from "./ResumeAwards";
-import { nanoid } from "nanoid";
 
 export default function MainSectionOne(props) {
   const skillsAquired =
@@ -51,6 +50,9 @@ export default function MainSectionOne(props) {
         cell={props.cell}
         linkedIn={props.linkedIn}
         close={props.close}
+        linkedInLink={props.linkedInLink}
+        setLinkedInLink={props.setLinkedInLink}
+        setPersonalData={props.setPersonalData}
       />
       <h4>Skills</h4>
       {skillsAquired}

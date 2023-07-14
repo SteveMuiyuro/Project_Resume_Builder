@@ -29,6 +29,7 @@ export default function SideBar(props) {
         <PersonalDetails
           PersonalData={props.PersonalData}
           setPersonalData={props.setPersonalData}
+          setLinkedInLink={props.setLinkedInLink}
         />
         <Skills
           handleAddSkill={props.handleAddSkill}

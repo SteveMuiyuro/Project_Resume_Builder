@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 export default function Hobbies(props) {
   const hobbyInputField = useRef();
 
+  //Add unique hobby to the hobby array
   function handleClickAdd() {
     let fieldValue = hobbyInputField.current.value;
     if (hobbyInputField && !props.hobby.includes(fieldValue)) {

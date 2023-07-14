@@ -7,6 +7,7 @@ export default function PersonalDetails(props) {
   const emailValue = useRef();
   const linkinValue = useRef();
 
+  //Set state value as an object of personal data retrived form input fields
   function handleClick() {
     props.setPersonalData({
       fullname: nameValue.current.value,
@@ -15,11 +16,11 @@ export default function PersonalDetails(props) {
       email: emailValue.current.value,
       linkedIn: linkinValue.current.value,
     });
-
+    props.setLinkedInLink((prev) => !prev);
     clear();
-    console.log(props.PersonalData);
   }
 
+  //Clear personal details data from input fields after submission
   function clear() {
     nameValue.current.value = "";
     titleValue.current.value = "";

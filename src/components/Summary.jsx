@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 
 export default function Summary(props) {
   const inputValue = useRef();
+
+  // Set state to the value of input value
   function handleClick() {
     props.setSumm(props.summValue);
     inputValue.current.value = "";

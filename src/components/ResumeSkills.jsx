@@ -6,6 +6,8 @@ export default function ResumeSkills(props) {
   const styles = {
     display: props.close && "none",
   };
+
+  //Delete Skill
   function deleteSkill(id) {
     props.setSkill((prev) => prev.filter((skl) => skl.id !== id));
   }

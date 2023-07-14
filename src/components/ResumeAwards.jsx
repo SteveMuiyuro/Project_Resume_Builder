@@ -6,6 +6,7 @@ export default function ResumeAwards(props) {
   const styles = {
     display: props.close && "none",
   };
+  //Delete specified award
   function deleteAward(id) {
     props.setAward((prev) => prev.filter((awd) => awd.id !== id));
   }

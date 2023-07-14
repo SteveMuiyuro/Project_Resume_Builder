@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
-import { nanoid } from "nanoid";
 export default function Skills(props) {
   const skillsInputField = useRef();
 
+  //Add unique skill to the skill state array
   function handleClickAdd() {
     let fieldValue = skillsInputField.current.value;
     if (skillsInputField && !props.skill.includes(fieldValue)) {

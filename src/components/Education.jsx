@@ -6,11 +6,13 @@ export default function Education(props) {
   const fromValue = useRef();
   const toValue = useRef();
 
+  //Add education to the education state array
   function handleClick() {
     props.setEducation((prev) => prev.concat(props.educationValue));
     clear();
   }
 
+  //Clear form input felds for the education section
   function clear() {
     schoolValue.current.value = "";
     courseValue.current.value = "";

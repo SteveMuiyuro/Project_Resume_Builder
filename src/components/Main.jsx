@@ -35,6 +35,9 @@ export default function Main(props) {
         hobby={props.hobby}
         award={props.award}
         close={props.close}
+        linkedInLink={props.linkedInLink}
+        setLinkedInLink={props.setLinkedInLink}
+        setPersonalData={props.setPersonalData}
       />
       <MainSectionTwo
         summary={props.summary}
@@ -51,6 +54,7 @@ export default function Main(props) {
         setEducation={props.setEducation}
         setSumm={props.setSumm}
         close={props.close}
+        linkedInLink={props.linkedInLink}
       />
     </div>
   );

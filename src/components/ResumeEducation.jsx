@@ -6,6 +6,8 @@ export default function ResumeEducation(props) {
   const styles = {
     display: props.close && "none",
   };
+
+  //Delete specified education entry
   function deleteEducation(id) {
     props.setEducation((prev) =>
       prev.filter((education) => education.id !== id)

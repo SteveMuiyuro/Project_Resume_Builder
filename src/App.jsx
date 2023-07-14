@@ -15,6 +15,8 @@ export default function App() {
     },
   ]);
 
+  const [linkedInLink, setLinkedInLink] = useState(false);
+
   const [expValue, setExpValue] = useState([]);
   const [close, setClose] = useState(false);
 
@@ -35,15 +37,16 @@ export default function App() {
   const [summ, setSumm] = useState("");
   const [summValue, setSummValue] = useState("");
 
+  // Collect data from experience input field and save it as a state variable
   function handleChange2(e) {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setExpValue((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: type === "checkbox" ? checked : value,
       id: nanoid(),
     }));
   }
-
+  // Collect data from education input field and save it as a state variable
   function handleChange(e) {
     const { name, value } = e.target;
     setEducationValue((prev) => ({
@@ -52,31 +55,34 @@ export default function App() {
       id: nanoid(),
     }));
   }
+
+  // Collect data from skillinput field and save it as a state variable
   function handleAddSkill(e) {
     const { value } = e.target;
     setSkillValue({ name: value, id: nanoid() });
   }
-
+  // Collect data from hobby input field and save it as a state variable
   function handleAddHobby(e) {
     const { value } = e.target;
     setHobbyValue({ name: value, id: nanoid() });
   }
-
+  // Collect data from award input field and save it as a state variable
   function handleAddAward(e) {
     const { value } = e.target;
     setAwardValue({ name: value, id: nanoid() });
   }
-
+  // Collect data from responsibilities input field and save it as a state variable
   function handleAddRes(e) {
     const { value } = e.target;
     setResValue(value);
   }
-
+  //Collect data from summary input field and save it as a state variable
   function handleAddSummary(e) {
     const { value } = e.target;
     setSummValue(value);
   }
 
+  //Conditional styling when the resume input fields section is closed
   const styles = {
     display: close && "flex",
     justifyContent: close && "center",
@@ -134,6 +140,7 @@ export default function App() {
           summ={summ}
           setClose={setClose}
           close={close}
+          setLinkedInLink={setLinkedInLink}
         />
         <Main
           fullname={PersonalData.fullname}
@@ -155,6 +162,9 @@ export default function App() {
           setExperience={setExperience}
           setEducation={setEducation}
           setSumm={setSumm}
+          linkedInLink={linkedInLink}
+          setLinkedInLink={setLinkedInLink}
+          setPersonalData={setPersonalData}
         />
       </div>
     </>

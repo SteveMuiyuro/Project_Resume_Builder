@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 export default function Awards(props) {
   const awardInputField = useRef();
 
+  //Add unique award to the award state array
   function handleClickAdd() {
     let fieldValue = awardInputField.current.value;
     if (fieldValue && !props.award.includes(fieldValue)) {
