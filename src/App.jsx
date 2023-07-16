@@ -3,6 +3,10 @@ import SideBar from "./components/SideBar";
 import Main from "./components/Main";
 import "./App.css";
 import { nanoid } from "nanoid";
+import JsPDF from "jspdf";
+import html2canvas from "html2canvas";
+import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 
 export default function App() {
   const [PersonalData, setPersonalData] = useState([]);
@@ -16,6 +20,7 @@ export default function App() {
   ]);
 
   const [linkedInLink, setLinkedInLink] = useState(false);
+  const [download, setDownload] = useState(false);
 
   const [expValue, setExpValue] = useState([]);
   const [close, setClose] = useState(false);
@@ -95,6 +100,9 @@ export default function App() {
     display: close && "none",
   };
 
+  const handleDownload = () => {
+    setDownload((prev) => !prev);
+  };
   return (
     <>
       <h2 className="heading" style={style2}>
@@ -142,6 +150,7 @@ export default function App() {
           close={close}
           setLinkedInLink={setLinkedInLink}
         />
+
         <Main
           fullname={PersonalData.fullname}
           title={PersonalData.title}
@@ -165,7 +174,18 @@ export default function App() {
           linkedInLink={linkedInLink}
           setLinkedInLink={setLinkedInLink}
           setPersonalData={setPersonalData}
+          download={download}
         />
+
+        {close && (
+          <button
+            className="download-btn"
+            onClick={handleDownload}
+            // disabled={download}
+          >
+            {download ? "Downloading" : "Download Resume"}
+          </button>
+        )}
       </div>
     </>
   );

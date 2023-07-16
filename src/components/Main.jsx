@@ -10,9 +10,10 @@ export default function Main(props) {
   }
 
   const styles = {
-    display: !props.close && "none",
+    display: !props.close ? "none" : props.download ? "none" : "",
     color: props.close && "#135d96",
   };
+
   return (
     <div className="main">
       <FontAwesomeIcon
