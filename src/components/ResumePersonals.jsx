@@ -57,7 +57,7 @@ export default function ResumePersonals(props) {
           style={styles2}
         />
       </div>
-      <hr className="divider" />
+      <hr className="style-one" />
     </div>
   );
 }

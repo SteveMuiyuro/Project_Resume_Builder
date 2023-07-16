@@ -1,17 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import MainSectionOne from "./MainSectionOne";
 import MainSectionTwo from "./MainSectionTwo";
+import JsPDF from "jspdf";
+import html2canvas from "html2canvas";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 
 export default function Main(props) {
+  const [download, setDownload] = useState(false);
+
   function handleEdit() {
     props.setClose((prev) => !prev);
   }
 
   const styles = {
-    display: !props.close ? "none" : props.download ? "none" : "",
+    display: !props.close ? "none" : download ? "none" : "",
     color: props.close && "#135d96",
+  };
+
+  const handleDownload = () => {
+    setDownload((prev) => !prev);
+    const capture = document.querySelector(".main");
+    html2canvas(capture).then((canvas) => {
+      const imgData = canvas.toDataURL("img/png");
+      const doc = new JsPDF("p", "mm", "a4");
+      const componentWidth = doc.internal.pageSize.getWidth();
+      const componentHeight = doc.internal.pageSize.getHeight();
+      doc.addImage(imgData, "PNG", 0, 0, componentWidth, componentHeight);
+      setDownload(false);
+      doc.save("Resume.pdf");
+    });
   };
 
   return (
@@ -57,6 +75,16 @@ export default function Main(props) {
         close={props.close}
         linkedInLink={props.linkedInLink}
       />
+
+      {props.close && (
+        <button
+          className="download-btn"
+          onClick={handleDownload}
+          disabled={download}
+        >
+          {download ? "Downloading" : "Download Resume"}
+        </button>
+      )}
     </div>
   );
 }

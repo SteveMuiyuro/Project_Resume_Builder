@@ -44,8 +44,8 @@ body {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 1.5rem;
-  position: relative;
   min-width: 65rem;
+  position: relative;
 }
 
 .close-btn {
@@ -194,6 +194,7 @@ textarea {
   border-radius: 50%;
   border: none;
   outline: none;
+  object-fit: cover;
 }
 
 .subtitle {
@@ -355,8 +356,7 @@ span {
 .delete-edu {
   cursor: pointer;
 }
-/*
-.profile-summary, */
+
 .roleInfo {
   text-align: start;
 }
@@ -385,7 +385,7 @@ span {
   transition: background-color, 0.3s ease in;
   position: absolute;
   top: 3.5em;
-  right: 4em;
+  right: -20em;
 }
 
 .download-btn:hover {
