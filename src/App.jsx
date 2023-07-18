@@ -100,7 +100,7 @@ export default function App() {
   return (
     <>
       <h2 className="heading" style={style2}>
-        One Page Resume Builder
+        Resume Builder
       </h2>
       <div className="app-container" style={styles}>
         <SideBar
