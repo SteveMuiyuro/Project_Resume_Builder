@@ -11,6 +11,7 @@ export default function Main(props) {
 
   function handleEdit() {
     props.setClose((prev) => !prev);
+    props.setHideSideBar((prev) => !prev);
   }
 
   const styles = {
@@ -34,12 +35,14 @@ export default function Main(props) {
 
   return (
     <div className="main">
-      <FontAwesomeIcon
-        icon={faPen}
-        style={styles}
-        className="edit-btn"
-        onClick={handleEdit}
-      />
+      {props.close && (
+        <FontAwesomeIcon
+          icon={faPen}
+          style={styles}
+          className="edit-btn"
+          onClick={handleEdit}
+        />
+      )}
 
       <MainSectionOne
         fullname={props.fullname}

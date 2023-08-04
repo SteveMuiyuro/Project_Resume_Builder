@@ -20,7 +20,7 @@ export default function App() {
   const [linkedInLink, setLinkedInLink] = useState(false);
 
   const [expValue, setExpValue] = useState([]);
-  const [close, setClose] = useState(false);
+  const [close, setClose] = useState(true);
 
   const [education, setEducation] = useState([]);
   const [experience, setExperience] = useState([]);
@@ -103,47 +103,49 @@ export default function App() {
         Resume Builder
       </h2>
       <div className="app-container" style={styles}>
-        <SideBar
-          PersonalData={PersonalData}
-          setPersonalData={setPersonalData}
-          education={education}
-          setEducation={setEducation}
-          educationValue={educationValue}
-          summaryHolder="summary"
-          companyHolder="company"
-          roleHolder="role"
-          roleFromHolder="roleFrom"
-          roleToHolder="roleTo"
-          roleDutiesHolder="roleDuties"
-          experience={experience}
-          setExperience={setExperience}
-          onChange={handleChange}
-          onChange2={handleChange2}
-          handleAddSkill={handleAddSkill}
-          handleAddHobby={handleAddHobby}
-          handleAddAward={handleAddAward}
-          handleAddRes={handleAddRes}
-          handleAddSummary={handleAddSummary}
-          setSkill={setSkill}
-          setHobby={setHobby}
-          setAward={setAward}
-          setSumm={setSumm}
-          setSummValue={setSummValue}
-          setResValue={setResValue}
-          skillValue={skillValue}
-          hobbyValue={hobbyValue}
-          awardValue={awardValue}
-          summValue={summValue}
-          resValue={resValue}
-          skill={skill}
-          hobby={hobby}
-          award={award}
-          expValue={expValue}
-          summ={summ}
-          setClose={setClose}
-          close={close}
-          setLinkedInLink={setLinkedInLink}
-        />
+        {!close && (
+          <SideBar
+            PersonalData={PersonalData}
+            setPersonalData={setPersonalData}
+            education={education}
+            setEducation={setEducation}
+            educationValue={educationValue}
+            summaryHolder="summary"
+            companyHolder="company"
+            roleHolder="role"
+            roleFromHolder="roleFrom"
+            roleToHolder="roleTo"
+            roleDutiesHolder="roleDuties"
+            experience={experience}
+            setExperience={setExperience}
+            onChange={handleChange}
+            onChange2={handleChange2}
+            handleAddSkill={handleAddSkill}
+            handleAddHobby={handleAddHobby}
+            handleAddAward={handleAddAward}
+            handleAddRes={handleAddRes}
+            handleAddSummary={handleAddSummary}
+            setSkill={setSkill}
+            setHobby={setHobby}
+            setAward={setAward}
+            setSumm={setSumm}
+            setSummValue={setSummValue}
+            setResValue={setResValue}
+            skillValue={skillValue}
+            hobbyValue={hobbyValue}
+            awardValue={awardValue}
+            summValue={summValue}
+            resValue={resValue}
+            skill={skill}
+            hobby={hobby}
+            award={award}
+            expValue={expValue}
+            summ={summ}
+            setClose={setClose}
+            close={close}
+            setLinkedInLink={setLinkedInLink}
+          />
+        )}
 
         <Main
           fullname={PersonalData.fullname}
